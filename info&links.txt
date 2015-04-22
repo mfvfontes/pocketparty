@@ -10,3 +10,9 @@ unity usa a versao 2.0 do .net (dotnet). checkar antes se existe na versao.
 
 https://msdn.microsoft.com/en-us/library/system.net.httpwebrequest(v=vs.80).aspx
 (usar isto ou ver se ha melhor.)
+
+pa ir ver quando estiverem espiritualmente perdidos
+http://en.wikipedia.org/wiki/Hypertext_Transfer_Protocol#Request_methods
+
+https://msdn.microsoft.com/en-us/library/system.net.httplistener(v=vs.80).aspx
+(pode ser isto que temos que por o servidor a correr)
