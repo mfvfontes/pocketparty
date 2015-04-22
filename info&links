@@ -1,0 +1,12 @@
+http://answers.unity3d.com/questions/13848/accessing-restful-web-apis-from-unity.html
+
+https://www.youtube.com/user/Unity3D
+
+http://answers.unity3d.com/questions/209528/restful-libraries-for-unity.html
+
+https://msdn.microsoft.com/en-us/library/system.net.httpwebrequest%28v=vs.110%29.aspx
+
+unity usa a versao 2.0 do .net (dotnet). checkar antes se existe na versao.
+
+https://msdn.microsoft.com/en-us/library/system.net.httpwebrequest(v=vs.80).aspx
+(usar isto ou ver se ha melhor.)
