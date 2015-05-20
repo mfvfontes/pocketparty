@@ -52,13 +52,14 @@ public class server : MonoBehaviour {
         // request -> dados do request 
 		HttpListenerRequest request = context.Request;
 
+        Debug.Log(request.RemoteEndPoint.ToString());
 
-        
         // Dados estao no reader
 		System.IO.Stream body = request.InputStream;
 		System.Text.Encoding encoding = request.ContentEncoding;
 		System.IO.StreamReader reader = new System.IO.StreamReader(body, encoding);
 
+        /*
         if (request.ContentType != null)
         {
             Debug.Log("Client data content type " + request.ContentType);
@@ -67,6 +68,7 @@ public class server : MonoBehaviour {
         {
             Debug.Log("Chegou vazio");
         }
+        */
 
 		Debug.Log ("Client data content length  " + request.ContentLength64);
 		
@@ -78,10 +80,12 @@ public class server : MonoBehaviour {
 
 		Debug.Log (s);
 
-        REST_Play play = JsonConvert.DeserializeObject<REST_Play>(s);
+        if (s.Length != 0)
+        {
+            REST_Play play = JsonConvert.DeserializeObject<REST_Play>(s);
 
-        Debug.Log(play.playerID);
-
+            Debug.Log(play.playerID);
+        }
         
         //JsonConvert.DeserializeObject(s);
 
