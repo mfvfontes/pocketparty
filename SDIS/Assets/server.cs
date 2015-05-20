@@ -41,28 +41,46 @@ public class server : MonoBehaviour {
 		Debug.Log ("CallBack");
 		HttpListener listener = (HttpListener)result.AsyncState;
 
+        // Acabar a receção
 		HttpListenerContext context = listener.EndGetContext (result);
+
+        // Voltar a registar o callback
+        listener.BeginGetContext(new AsyncCallback(ListenerCallback), listener);
+
+        // request -> dados do request 
 		HttpListenerRequest request = context.Request;
 
+        // Dados estao no reader
 		System.IO.Stream body = request.InputStream;
 		System.Text.Encoding encoding = request.ContentEncoding;
 		System.IO.StreamReader reader = new System.IO.StreamReader(body, encoding);
 
-		if (request.ContentType != null)
-		{
-			Debug.Log ("Client data content type " + request.ContentType);
-		}
+        if (request.ContentType != null)
+        {
+            Debug.Log("Client data content type " + request.ContentType);
+        }
+        else
+        {
+            Debug.Log("Chegou vazio");
+        }
 
 		Debug.Log ("Client data content length  " + request.ContentLength64);
 		
 		Debug.Log ("Start of client data:");
 		// Convert the data to a string and display it on the console.
 		string s = reader.ReadToEnd();
+
+        
+
 		Debug.Log (s);
 		Debug.Log ("End of client data:");
+
+        // Fechar streams
 		body.Close();
 		reader.Close();
 
+
+        // Resposta
 		HttpListenerResponse response = context.Response;
 
 		string responseString = "<html><body>You found me!</body></html>";
@@ -72,9 +90,5 @@ public class server : MonoBehaviour {
 		output.Write(buffer,0,buffer.Length);
 		
 		output.Close();
-		
-		listener.BeginGetContext (new AsyncCallback(ListenerCallback),listener);
-
-
 	}
 }

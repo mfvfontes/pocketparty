@@ -30,16 +30,21 @@ public class www_test : MonoBehaviour {
 
 	public void connect ()
 	{
+        // Criar um request
 		HttpWebRequest request = (HttpWebRequest) System.Net.WebRequest.Create(input.text);
 		
+        // Definir metodo
 		request.Method = "POST";
 		
+        // Dados a enviar
 		string postData = "test one";
 		ASCIIEncoding encoding = new ASCIIEncoding ();
 		byte[] byte1 = encoding.GetBytes (postData);
 		
 		// Set the content length of the string being posted.
 		request.ContentLength = byte1.Length;
+
+        request.TransferEncoding = encoding.BodyName;
 		
 		Stream newStream = request.GetRequestStream ();
         newStream.Write(byte1, 0, byte1.Length);
