@@ -5,7 +5,7 @@
 	"x": 23,
 	"y": 32,
 	"z": 63,
-	"magnitude": "floatnumber" //norma do vec
+	"magnitude": "floatnumber", //norma do vec
 	"jump": true, //tmb tinha la um bool para jump
 	
 	},
