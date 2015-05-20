@@ -1,12 +1,15 @@
 
 //jogada generic
 {
-	"Play": { // direçao da jogada
+	"Play": { 
+	// direçao da jogada
 	"x": 23,
 	"y": 32,
 	"z": 63,
-	"magnitude": "floatnumber", //norma do vec
-	"jump": true, //tmb tinha la um bool para jump
+	//norma do vec
+	"magnitude": "floatnumber", 
+	"jump": true, 
+	//tmb tinha la um bool para jump
 	
 	},
 	"playerID": "macaddress_ou_ip_ou_username"
