@@ -1,0 +1,31 @@
+
+//jogada generic
+{
+	"Play": { // o delta para enfiar no vector3 que tem a jogada
+	"x": 23,
+	"y": 32,
+	"z": 63,
+	"jump": true, //tmb tinha la um bool para jump
+	},
+	"playerID": "macaddress_ou_ip_ou_username"
+}
+
+
+//pedido de cliente para juntar a sessao
+{
+	"Join": {
+		"username" : "MaiorDoMundo",
+		"playerID": "macaddress_ou_ip_ou_username",
+		"color": "blue"
+	}
+	
+}
+
+
+//resposta do server ao pedido de JOIN (pelas regras do rest pelos vistos é +/- aceite que se use coisas assim para autenticar logins e assim)
+{
+	"ackJoin": true
+}
+
+//eu acho que isto e' pouco, mas acho que chega para o que temos pensado.
+
