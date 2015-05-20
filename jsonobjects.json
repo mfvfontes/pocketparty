@@ -5,12 +5,10 @@
 	// direçao da jogada
 	"x": 23,
 	"y": 32,
-	"z": 63,
 	//norma do vec
 	"magnitude": "floatnumber", 
 	"jump": true, 
 	//tmb tinha la um bool para jump
-	
 	},
 	"playerID": "macaddress_ou_ip_ou_username"
 }
