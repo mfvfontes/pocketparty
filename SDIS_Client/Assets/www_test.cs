@@ -4,6 +4,8 @@ using System.Net;
 using System.Text;
 using System.IO;
 using UnityEngine.UI;
+using Newtonsoft.Json.Linq;
+using Newtonsoft.Json;
 
 public class www_test : MonoBehaviour {
 
@@ -30,41 +32,39 @@ public class www_test : MonoBehaviour {
 
 	public void connect ()
 	{
-        // Criar um request
-		HttpWebRequest request = (HttpWebRequest) System.Net.WebRequest.Create(input.text);
-		
-        // Definir metodo
-		request.Method = "POST";
-		
-        // Dados a enviar
-		string postData = "test one";
-		ASCIIEncoding encoding = new ASCIIEncoding ();
-		byte[] byte1 = encoding.GetBytes (postData);
-		
-		// Set the content length of the string being posted.
-		request.ContentLength = byte1.Length;
+        
 
-        request.TransferEncoding = encoding.BodyName;
-		
-		Stream newStream = request.GetRequestStream ();
+       REST_Play p = new REST_Play();
+
+        Play pl = new Play();
+        pl.move = new Vector2(1,0);
+        pl.jump = false;
+
+        p.play = pl;
+
+        p.playerID = "test";
+
+        string postData = JsonConvert.SerializeObject(p, Formatting.Indented,
+            new JsonSerializerSettings()
+                        { 
+                            ReferenceLoopHandling = ReferenceLoopHandling.Ignore
+                        }
+        );
+
+        Debug.Log(postData);
+
+        HttpWebRequest request = (HttpWebRequest)System.Net.WebRequest.Create(input.text);
+
+        request.Method = "POST";
+
+        ASCIIEncoding encoding = new ASCIIEncoding();
+        byte[] byte1 = encoding.GetBytes(postData);
+
+        // Set the content length of the string being posted.
+        request.ContentLength = byte1.Length;
+
+        Stream newStream = request.GetRequestStream();
         newStream.Write(byte1, 0, byte1.Length);
 
-        log.text += "Sent message";
-		//StartCoroutine(Test());
-	}
-
-	IEnumerator Test () {
-
-		form = new WWWForm ();
-		form.AddField ("test", 1);
-
-		WWW www = new WWW("http://127.0.0.1:8000/test/");
-
-		yield return www;
-
-		if (!string.IsNullOrEmpty(www.error))
-			print("Error downloading");
-		else
-			Debug.Log(www.text);
 	}
 }

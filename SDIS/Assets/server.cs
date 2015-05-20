@@ -2,6 +2,8 @@
 using System.Collections;
 using System.Net;
 using System;
+using Newtonsoft.Json.Linq;
+using Newtonsoft.Json;
 
 public class server : MonoBehaviour {
 
@@ -40,7 +42,7 @@ public class server : MonoBehaviour {
 	void ListenerCallback(IAsyncResult result) {
 		Debug.Log ("CallBack");
 		HttpListener listener = (HttpListener)result.AsyncState;
-
+        
         // Acabar a receção
 		HttpListenerContext context = listener.EndGetContext (result);
 
@@ -50,6 +52,8 @@ public class server : MonoBehaviour {
         // request -> dados do request 
 		HttpListenerRequest request = context.Request;
 
+
+        
         // Dados estao no reader
 		System.IO.Stream body = request.InputStream;
 		System.Text.Encoding encoding = request.ContentEncoding;
@@ -73,6 +77,14 @@ public class server : MonoBehaviour {
         
 
 		Debug.Log (s);
+
+        REST_Play play = JsonConvert.DeserializeObject<REST_Play>(s);
+
+        Debug.Log(play.playerID);
+
+        
+        //JsonConvert.DeserializeObject(s);
+
 		Debug.Log ("End of client data:");
 
         // Fechar streams
