@@ -59,17 +59,6 @@ public class server : MonoBehaviour {
 		System.Text.Encoding encoding = request.ContentEncoding;
 		System.IO.StreamReader reader = new System.IO.StreamReader(body, encoding);
 
-        /*
-        if (request.ContentType != null)
-        {
-            Debug.Log("Client data content type " + request.ContentType);
-        }
-        else
-        {
-            Debug.Log("Chegou vazio");
-        }
-        */
-
 		Debug.Log ("Client data content length  " + request.ContentLength64);
 		
 		Debug.Log ("Start of client data:");

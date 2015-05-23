@@ -10,7 +10,7 @@ public class PlayerMovement : MonoBehaviour {
     public float MaxAngularVelocity = 25;
     public float JumpPower = 2;
 
-    private const float GroundRayLength = 1f;
+    public float GroundRayLength = 1f;
 
     private Rigidbody rigid;
 

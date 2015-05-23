@@ -1,8 +1,6 @@
 Microsoft Visual Studio Solution File, Format Version 11.00
 # Visual Studio 2008
 
-Project("{361615E5-C82D-CFED-7FF2-0CBD96E9D2ED}") = "SDIS", "Assembly-CSharp-firstpass-vs.csproj", "{6397A0AE-2398-3301-0F5A-A490F67CBA9E}"
-EndProject
 Project("{361615E5-C82D-CFED-7FF2-0CBD96E9D2ED}") = "SDIS", "Assembly-CSharp-vs.csproj", "{9F24881D-9C4B-1939-8586-4491BC619BE2}"
 EndProject
 Project("{361615E5-C82D-CFED-7FF2-0CBD96E9D2ED}") = "SDIS", "Assembly-CSharp-Editor-vs.csproj", "{A5662D4A-49C6-156A-10C5-D5890A6AB74C}"
@@ -13,10 +11,6 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{6397A0AE-2398-3301-0F5A-A490F67CBA9E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{6397A0AE-2398-3301-0F5A-A490F67CBA9E}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{6397A0AE-2398-3301-0F5A-A490F67CBA9E}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{6397A0AE-2398-3301-0F5A-A490F67CBA9E}.Release|Any CPU.Build.0 = Release|Any CPU
 		{9F24881D-9C4B-1939-8586-4491BC619BE2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{9F24881D-9C4B-1939-8586-4491BC619BE2}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{9F24881D-9C4B-1939-8586-4491BC619BE2}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -29,7 +23,7 @@ Global
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
-																												GlobalSection(MonoDevelopProperties) = preSolution
+																															GlobalSection(MonoDevelopProperties) = preSolution
 =======
 													GlobalSection(MonoDevelopProperties) = preSolution
 >>>>>>> origin/master

@@ -48,12 +48,15 @@
   <ItemGroup>
      <Compile Include="Assets\JSON\Play.cs" />
      <Compile Include="Assets\JSON\REST_Play.cs" />
+     <Compile Include="Assets\Scripts\ControllerManager.cs" />
+     <Compile Include="Assets\Scripts\NetworkHandler.cs" />
+     <Compile Include="Assets\Scripts\TouchController.cs" />
      <Compile Include="Assets\www_test.cs" />
  <Reference Include="UnityEngine.UI">
  <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>
  </Reference>
  <Reference Include="Newtonsoft.Json">
- <HintPath>C:/Users/João/Documents/GitHub/pocketparty/SDIS_Client/Assets/Newtonsoft.Json.dll</HintPath>
+ <HintPath>C:/Users/João/Documents/GitHub/pocketparty/SDIS_Client/Assets/Libs/Newtonsoft.Json.dll</HintPath>
  </Reference>
  <Reference Include="UnityEditor.iOS.Extensions.Xcode">
  <HintPath>C:/Program Files/Unity/Editor/Data/PlaybackEngines/iossupport/UnityEditor.iOS.Extensions.Xcode.dll</HintPath>
